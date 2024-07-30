@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfx7o4pyutj5o"]
+
+[ext_resource type="Texture2D" uid="uid://dofqwca14inhy" path="res://Tiny Swords/Factions/Goblins/Troops/Torch/Purple/Torch_Purple.png" id="1_b25k3"]
+[ext_resource type="PackedScene" uid="uid://vtrh6wvthp51" path="res://player/player.tscn" id="2_m5j4x"]
+[ext_resource type="PackedScene" path="res://enemies/paw.tscn" id="3_1rtwt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nsho7"]
+line_spacing = 29.0
+
+[node name="node2d" type="Node2D"]
+
+[node name="TorchPurple" type="Sprite2D" parent="."]
+position = Vector2(2147, 547)
+texture = ExtResource("1_b25k3")
+
+[node name="Label" type="Label" parent="TorchPurple"]
+offset_left = 683.0
+offset_top = -432.0
+offset_right = 715.0
+offset_bottom = -409.0
+scale = Vector2(3.70757, 3.65823)
+text = "idle
+"
+
+[node name="Label7" type="Label" parent="TorchPurple"]
+offset_left = -699.0
+offset_top = -431.0
+offset_right = -687.0
+offset_bottom = -148.0
+scale = Vector2(3.70757, 3.65823)
+text = "01234"
+label_settings = SubResource("LabelSettings_nsho7")
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="TorchPurple"]
+offset_left = 503.0
+offset_top = -241.0
+offset_right = 535.0
+offset_bottom = -192.0
+scale = Vector2(3.70757, 3.65823)
+text = "run
+
+"
+
+[node name="Label3" type="Label" parent="TorchPurple"]
+offset_left = 483.0
+offset_top = -54.0
+offset_right = 583.0
+offset_bottom = -5.0
+scale = Vector2(3.70757, 3.65823)
+text = "attack side 01
+"
+
+[node name="Label4" type="Label" parent="TorchPurple"]
+offset_left = 473.0
+offset_top = 151.0
+offset_right = 585.0
+offset_bottom = 200.0
+scale = Vector2(3.70757, 3.65823)
+text = "attack down 01"
+
+[node name="Label5" type="Label" parent="TorchPurple"]
+offset_left = 481.0
+offset_top = 311.0
+offset_right = 593.0
+offset_bottom = 360.0
+scale = Vector2(3.70757, 3.65823)
+text = "attack up 01"
+
+[node name="Label6" type="Label" parent="TorchPurple"]
+offset_left = -639.0
+offset_top = -550.0
+offset_right = -309.0
+offset_bottom = -527.0
+scale = Vector2(3.70757, 3.65823)
+text = "0            1           2          3          4           5          6
+"
+
+[node name="Player" parent="." instance=ExtResource("2_m5j4x")]
+position = Vector2(426, 368)
+motion_mode = 1
+
+[node name="Paw" parent="." instance=ExtResource("3_1rtwt")]
+position = Vector2(583, 427)
+
+[node name="Paw2" parent="." instance=ExtResource("3_1rtwt")]
+position = Vector2(215, 259)
+
+[node name="Paw3" parent="." instance=ExtResource("3_1rtwt")]
+position = Vector2(776, 231)

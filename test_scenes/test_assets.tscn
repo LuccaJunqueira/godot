@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://csot3eary5jrw"]
+
+[ext_resource type="Texture2D" uid="uid://bw6j0i18ekgnn" path="res://Tiny Swords/Factions/Knights/Troops/Pawn/Red/Pawn_Red.png" id="1_a0qy0"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PawnRed" type="Sprite2D" parent="."]
+position = Vector2(1809, 590)
+texture = ExtResource("1_a0qy0")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://beprqumxvg27n"]
+
+[ext_resource type="PackedScene" uid="uid://vtrh6wvthp51" path="res://player/player.tscn" id="1_6uks7"]
+[ext_resource type="Script" path="res://systems/mob_spawner.gd" id="2_vgf3o"]
+
+[sub_resource type="Curve2D" id="Curve2D_jjc20"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -702, -595, 0, 0, 0, 0, 904, -560, 0, 0, 0, 0, 904, 595, 0, 0, 0, 0, -707, 597, 0, 0, 0, 0, -704, -592)
+}
+point_count = 5
+
+[node name="TestMobSpawning" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_6uks7")]
+position = Vector2(495, 304)
+
+[node name="MobSpawner" type="Node2D" parent="."]
+position = Vector2(496, 310)
+script = ExtResource("2_vgf3o")
+
+[node name="Path2D" type="Path2D" parent="MobSpawner"]
+curve = SubResource("Curve2D_jjc20")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="MobSpawner/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-330.479, 596.533)
+rotation = 3.14035
+progress = 3995.86

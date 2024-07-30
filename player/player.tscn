@@ -1,0 +1,231 @@
+[gd_scene load_steps=17 format=3 uid="uid://vtrh6wvthp51"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_lkbcf"]
+[ext_resource type="Texture2D" uid="uid://dofqwca14inhy" path="res://Tiny Swords/Factions/Goblins/Troops/Torch/Purple/Torch_Purple.png" id="2_f5ule"]
+[ext_resource type="PackedScene" path="res://misc/big_skull.tscn" id="2_wtb4i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j40rj"]
+radius = 10.4211
+height = 36.4913
+
+[sub_resource type="Animation" id="Animation_pfhd3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_axibb"]
+resource_name = "attack_down "
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3), Vector2i(4, 3), Vector2i(5, 3)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"deal_damage_to_enemies"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_q57qj"]
+resource_name = "attack_side"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.3001, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2), Vector2i(3, 2), Vector2i(4, 2), Vector2i(5, 2)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"deal_damage_to_enemies"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_737u4"]
+resource_name = "attack_up"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 4), Vector2i(1, 4), Vector2i(2, 4), Vector2i(3, 4), Vector2i(4, 4), Vector2i(5, 4)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"deal_damage_to_enemies"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ioj24"]
+resource_name = "idle"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nq3pa"]
+resource_name = "run"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1), Vector2i(4, 1), Vector2i(5, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uxf8i"]
+_data = {
+"RESET": SubResource("Animation_pfhd3"),
+"attack_down ": SubResource("Animation_axibb"),
+"attack_side": SubResource("Animation_q57qj"),
+"attack_up": SubResource("Animation_737u4"),
+"idle": SubResource("Animation_ioj24"),
+"run": SubResource("Animation_nq3pa")
+}
+
+[sub_resource type="GDScript" id="GDScript_33a76"]
+script/source = "extends AnimationPlayer
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y16cs"]
+radius = 125.016
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_we8sj"]
+radius = 39.0512
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_835g4"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2qaa"]
+bg_color = Color(0.968627, 0.133333, 0.25098, 1)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+position = Vector2(384, 188)
+script = ExtResource("1_lkbcf")
+speed = null
+touch_damage = null
+health = null
+max_health = null
+death_prefab = ExtResource("2_wtb4i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -26)
+texture = ExtResource("2_f5ule")
+hframes = 7
+vframes = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -26)
+scale = Vector2(1.64288, 1.53461)
+shape = SubResource("CapsuleShape2D_j40rj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_uxf8i")
+}
+autoplay = "idle"
+script = SubResource("GDScript_33a76")
+
+[node name="TouchArea" type="Area2D" parent="."]
+position = Vector2(0, -25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TouchArea"]
+shape = SubResource("CircleShape2D_y16cs")
+debug_color = Color(0.886275, 0.290196, 0.411765, 0.00784314)
+
+[node name="HitboxArea" type="Area2D" parent="."]
+position = Vector2(0, -24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_we8sj")
+debug_color = Color(0.972549, 0.109804, 0.333333, 0.258824)
+
+[node name="HealthProgressBar" type="ProgressBar" parent="."]
+offset_left = -42.0
+offset_right = 46.0
+offset_bottom = 27.0
+scale = Vector2(1.03844, 0.168639)
+theme_override_styles/background = SubResource("StyleBoxFlat_835g4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_m2qaa")
+value = 75.0
+rounded = true
+show_percentage = false
